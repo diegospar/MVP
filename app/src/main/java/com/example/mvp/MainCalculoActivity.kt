@@ -10,14 +10,15 @@ import android.widget.TextView
 class MainActivity : AppCompatActivity(), CalculoContract.View{
 
     val presenter: CalculoContract.Presenter = CalculoPresenter(this)
-        v
+    lateinit var mensaje: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var boton = findViewById<Button>(R.id.button)
         var num= findViewById<EditText>(R.id.editTextNumber)
-        var mensaje= findViewById<TextView>(R.id.mensaje)
+        mensaje= findViewById<TextView>(R.id.mensaje)
+
 
         boton.setOnClickListener {
         obtenerValor(num)
@@ -25,13 +26,12 @@ class MainActivity : AppCompatActivity(), CalculoContract.View{
 
     }
 
-    override fun obtenerValor(num: EditText) {
-        presenter.numAlCuadrado(num.text.toString())
+    override fun obtenerValor(num: EditText?) {
+        presenter.numAlCuadrado(num?.text.toString())
     }
 
     override fun mostrarResultado(resultado : String) {
-
-        mensaje.text = resultado
+        if (::mensaje.isInitialized) mensaje.text = resultado
     }
 
 

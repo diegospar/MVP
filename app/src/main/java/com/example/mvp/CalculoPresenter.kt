@@ -22,8 +22,8 @@ class CalculoPresenter constructor(view: CalculoContract.View) : CalculoContract
     }
 
     override  fun numAlCuadrado(numero: String?){
-
-        model.numAlCuadrado(numero?.toInt(),this)
+        val numParciado=  if (numero?.isNotBlank()==true) numero.toInt() else null
+        model.numAlCuadrado(numParciado,this)
     }
 
 

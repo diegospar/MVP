@@ -22,7 +22,7 @@ public interface CalculoContract {
     }
 
     interface View{
-        fun obtenerValor(num : EditText)
+        fun obtenerValor(num : EditText?)
         fun mostrarResultado( resultado : String)
 
     }
