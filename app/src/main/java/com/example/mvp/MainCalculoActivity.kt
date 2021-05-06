@@ -9,15 +9,15 @@ import android.widget.TextView
 
 class MainActivity : AppCompatActivity(), CalculoContract.View{
 
-    lateinit var presenter: CalculoContract.Presenter
-        lateinit var mensaje: TextView
+    val presenter: CalculoContract.Presenter = CalculoPresenter(this)
+        v
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         var boton = findViewById<Button>(R.id.button)
         var num= findViewById<EditText>(R.id.editTextNumber)
-       mensaje= findViewById<TextView>(R.id.mensaje)
+        var mensaje= findViewById<TextView>(R.id.mensaje)
 
         boton.setOnClickListener {
         obtenerValor(num)
