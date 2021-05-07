@@ -1,7 +1,6 @@
-package com.example.mvp;
+package com.example.mvp.modulos;
 
 import android.widget.EditText
-import android.widget.TextView
 
 public interface CalculoContract {
 

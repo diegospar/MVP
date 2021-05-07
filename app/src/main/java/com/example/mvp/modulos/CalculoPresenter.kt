@@ -1,7 +1,4 @@
-package com.example.mvp
-
-import android.view.View
-import android.widget.TextView
+package com.example.mvp.modulos
 
 class CalculoPresenter constructor(view: CalculoContract.View) : CalculoContract.Presenter,
     CalculoContract.Model.OnFinishedListener {
